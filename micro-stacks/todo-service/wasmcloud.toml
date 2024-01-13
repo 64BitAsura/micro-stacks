@@ -1,0 +1,7 @@
+name = "TodoService"
+language = "rust"
+type = "actor"
+
+[actor]
+call_alias = "wasmcloud/todo"
+claims = []
