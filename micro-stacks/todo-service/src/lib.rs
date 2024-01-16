@@ -1,6 +1,7 @@
 use serde_json::json;
 use wasmbus_rpc::actor::prelude::*;
-use wasmcloud_interface_todo::{HttpRequest, HttpResponse, Todo, TodoReceiver};
+use wasmcloud_interface_httpserver::{HttpRequest, HttpResponse};
+use wasmcloud_interface_todo::{Todo, TodoReceiver};
 
 mod ui;
 use ui::get_asset;
@@ -18,9 +19,9 @@ impl Todo for TodoActor {
         match (req.method.as_ref(), trimmed_path.as_slice()) {
             ("GET", ["api"]) => Ok(HttpResponse {
                 body: "working".as_bytes().to_vec(),
-                200,
+                status_code: 200,
                 ..Default::default()
-            }).await,
+            }),
             // Any other GET request is interpreted as a static asset request for the UI
             ("GET", asset_path) => get_asset(asset_path.join("/")),
             (_, _) => Ok(HttpResponse::not_found()),
