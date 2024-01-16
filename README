@@ -1,0 +1,7 @@
+PoC
+
+1. Install rust toolchain and wash cli- https://github.com/wasmCloud/wash
+2. Run wash build in the following folders ./http-to-actors and ./micro-stacks/todo-service
+3. Run wash up -d
+4. Run wasm app deploy ./wadm.yaml in ./http-to-actors
+5. Run curl http://localhost:8080/index.js or curl http://localhost:8080/api
