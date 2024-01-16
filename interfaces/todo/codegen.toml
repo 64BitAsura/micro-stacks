@@ -16,7 +16,7 @@ path = "todo.smithy"
 # If a relative path is used, it is relative to the location of this codegen.toml
 #path = "/path/to/my-interfaces"
 url = "https://wasmcloud.github.io/interfaces/idl/org.wasmcloud"
-files = [ "wasmcloud-core.smithy", "wasmcloud-model.smithy" ]
+files = [ "wasmcloud-core.smithy", "wasmcloud-model.smithy", "httpserver.smithy" ]
 
 
 ##

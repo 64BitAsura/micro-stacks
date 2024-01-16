@@ -15,6 +15,7 @@ crate-type = ["cdylib", "rlib"]
 async-trait = "0.1"
 serde = { version = "1.0", features = ["derive"] }
 serde_bytes = "0.11.5"
+wasmcloud-interface-httpserver = "0.8"
 wasmbus-rpc = "0.11"
 
 [dev-dependencies]
