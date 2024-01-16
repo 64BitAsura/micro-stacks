@@ -1,0 +1,36 @@
+
+apiVersion: core.oam.dev/v1beta1
+kind: Application
+metadata:
+  name: http-to-actors
+  annotations:
+    version: v0.1.0
+    description: "http to actors example"
+spec:
+  components:
+    - name: httpToActors
+      type: actor
+      properties:
+        image: file:///workspaces/micro-stacks/http-to-actors/build/httpToActors_s.wasm
+      traits:
+        - type: spreadscaler
+          properties:
+            replicas: 1
+        - type: linkdef
+          properties:
+            target: httpserver
+            values:
+              ADDRESS: 0.0.0.0:8080
+    - name: TodoService
+      type: actor
+      properties:
+        image: file:///workspaces/micro-stacks/micro-stacks/todo-service/build/todo_service_s.wasm
+      traits:
+        - type: spreadscaler
+          properties:
+            replicas: 1
+    - name: httpserver
+      type: capability
+      properties:
+        image: wasmcloud.azurecr.io/httpserver:0.17.0
+        contract: wasmcloud:httpserver

@@ -1,6 +1,7 @@
 name = "TodoService"
 language = "rust"
 type = "actor"
+version = "0.1.0"
 
 [actor]
 call_alias = "wasmcloud/todo"

@@ -1,5 +1,5 @@
 use wasmbus_rpc::actor::prelude::*;
-use wasmcloud_interface_httpserver::{HttpRequest, HttpResponse, HttpServer, HttpServerReceiver};
+use wasmcloud_interface_httpserver::{HttpRequest, HttpResponse , HttpServer, HttpServerReceiver};
 use wasmcloud_interface_todo::{Todo, TodoSender};
 
 const TODO_ACTOR: &str = "wasmcloud/todo";
